@@ -1,0 +1,269 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 1rem;
+}
+
+h1,
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+}
+
+/* Increase specificity for the remove player button */
+li button.remove-player-button {
+    background-color: transparent !important;
+    color: gray !important;
+    border: none !important;
+    padding: 0.25rem 0.5rem !important;
+    cursor: pointer !important;
+}
+
+li button.remove-player-button:hover {
+    color: black !important;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    background-color: #1c5980;
+}
+
+button.remove {
+    background-color: #e74c3c;
+}
+
+button.remove:hover {
+    background-color: #c0392b;
+}
+
+button.remove:active {
+    background-color: #96281b;
+}
+
+button.play-again {
+    background-color: #2ecc71;
+}
+
+button.play-again:hover {
+    background-color: #27ae60;
+}
+
+button.play-again:active {
+    background-color: #1e8449;
+}
+
+button.quit {
+    background-color: #e67e22;
+}
+
+button.quit:hover {
+    background-color: #d35400;
+}
+
+button.quit:active {
+    background-color: #a84300;
+}
+
+/* Player List */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Reveal Section */
+.reveal-section {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.reveal-section h2 {
+    margin-bottom: 1rem;
+}
+
+.reveal-section p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Elimination Phase */
+.elimination-phase {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.elimination-phase h2 {
+    margin-bottom: 1rem;
+}
+
+.elimination-phase ul {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Over Section */
+.game-over {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.game-over h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .reveal-section,
+    .elimination-phase,
+    .game-over {
+        padding: 1rem;
+    }
+
+    .reveal-section p,
+    .elimination-phase p {
+        font-size: 1rem;
+    }
+
+    .elimination-phase ul {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .reveal-section,
+    .elimination-phase,
+    .game-over {
+        padding: 0.75rem;
+    }
+
+    .reveal-section p,
+    .elimination-phase p {
+        font-size: 0.9rem;
+    }
+
+    .elimination-phase ul {
+        padding: 0.25rem;
+    }
+}
