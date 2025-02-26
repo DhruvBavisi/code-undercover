@@ -1,14 +1,205 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const wordPairs = [
-  ["Apple", "Pear"],
-  ["Sun", "Star"],
-  ["Ocean", "Sea"],
-  ["Laptop", "Tablet"],
-  ["Doctor", "Nurse"],
-  ["Pencil", "Pen"],
-  ["Soccer", "Football"],
-  ["Shark", "Whale"],
+    ["Apple", "Pear"],
+    ["Sun", "Star"],
+    ["Ocean", "Sea"],
+    ["Laptop", "Tablet"],
+    ["Doctor", "Nurse"],
+    ["Pencil", "Pen"],
+    ["Soccer", "Football"],
+    ["Shark", "Whale"],
+    ["Coffee", "Tea"],
+    ["Pizza", "Burger"],
+    ["Car", "Bike"],
+    ["Dog", "Cat"],
+    ["Book", "Magazine"],
+    ["Tree", "Plant"],
+    ["Mountain", "Hill"],
+    ["River", "Lake"],
+    ["City", "Town"],
+    ["Chair", "Stool"],
+    ["Phone", "Tablet"],
+    ["Watch", "Clock"],
+    ["Shoes", "Slippers"],
+    ["Glasses", "Sunglasses"],
+    ["Cake", "Pie"],
+    ["Bread", "Toast"],
+    ["Butter", "Cheese"],
+    ["Juice", "Soda"],
+    ["Ice Cream", "Frozen Yogurt"],
+    ["Chocolate", "Candy"],
+    ["Cup", "Mug"],
+    ["Plate", "Bowl"],
+    ["Fork", "Spoon"],
+    ["Knife", "Sword"],
+    ["Shirt", "T-Shirt"],
+    ["Pants", "Jeans"],
+    ["Socks", "Stockings"],
+    ["Hat", "Cap"],
+    ["Gloves", "Mittens"],
+    ["Scarf", "Shawl"],
+    ["Jacket", "Coat"],
+    ["Dress", "Skirt"],
+    ["Suit", "Tuxedo"],
+    ["Tie", "Bowtie"],
+    ["Belt", "Suspenders"],
+    ["Wallet", "Purse"],
+    ["Backpack", "Bag"],
+    ["Luggage", "Suitcase"],
+    ["Umbrella", "Parasol"],
+    ["Camera", "Video Camera"],
+    ["Computer", "Laptop"],
+    ["Printer", "Scanner"],
+    ["Keyboard", "Piano"],
+    ["Guitar", "Violin"],
+    ["Drum", "Cymbal"],
+    ["Flute", "Clarinet"],
+    ["Trumpet", "Trombone"],
+    ["Saxophone", "Clarinet"],
+    ["Microphone", "Speaker"],
+    ["Headphones", "Earphones"],
+    ["Radio", "Television"],
+    ["Movie", "Film"],
+    ["Theater", "Cinema"],
+    ["Play", "Musical"],
+    ["Concert", "Festival"],
+    ["Art", "Painting"],
+    ["Sculpture", "Statue"],
+    ["Photography", "Cinematography"],
+    ["Dance", "Ballet"],
+    ["Music", "Song"],
+    ["Poetry", "Prose"],
+    ["Novel", "Short Story"],
+    ["Comic", "Graphic Novel"],
+    ["Newspaper", "Magazine"],
+    ["Blog", "Website"],
+    ["Email", "Letter"],
+    ["Phone Call", "Text Message"],
+    ["Social Media", "Networking"],
+    ["Friend", "Acquaintance"],
+    ["Family", "Relatives"],
+    ["Parent", "Guardian"],
+    ["Child", "Kid"],
+    ["Baby", "Toddler"],
+    ["Teenager", "Adult"],
+    ["Student", "Teacher"],
+    ["Professor", "Lecturer"],
+    ["School", "University"],
+    ["Classroom", "Lecture Hall"],
+    ["Homework", "Assignment"],
+    ["Exam", "Test"],
+    ["Grade", "Score"],
+    ["Degree", "Diploma"],
+    ["Job", "Career"],
+    ["Employer", "Employee"],
+    ["Boss", "Manager"],
+    ["Colleague", "Coworker"],
+    ["Office", "Workspace"],
+    ["Desk", "Table"],
+    ["Chair", "Stool"],
+    ["Computer", "Laptop"],
+    ["Printer", "Scanner"],
+    ["Phone", "Tablet"],
+    ["Meeting", "Conference"],
+    ["Presentation", "Speech"],
+    ["Project", "Task"],
+    ["Deadline", "Due Date"],
+    ["Salary", "Wage"],
+    ["Bonus", "Incentive"],
+    ["Promotion", "Raise"],
+    ["Resignation", "Retirement"],
+    ["Interview", "Audition"],
+    ["Resume", "CV"],
+    ["Application", "Submission"],
+    ["Offer", "Proposal"],
+    ["Contract", "Agreement"],
+    ["Business", "Company"],
+    ["Entrepreneur", "Businessman"],
+    ["Startup", "Venture"],
+    ["Investment", "Funding"],
+    ["Profit", "Revenue"],
+    ["Loss", "Debt"],
+    ["Bank", "Credit Union"],
+    ["Account", "Savings"],
+    ["Loan", "Mortgage"],
+    ["Credit Card", "Debit Card"],
+    ["Cash", "Currency"],
+    ["Coin", "Bill"],
+    ["ATM", "Bank Branch"],
+    ["Transaction", "Payment"],
+    ["Receipt", "Invoice"],
+    ["Budget", "Expense"],
+    ["Tax", "Duty"],
+    ["Insurance", "Policy"],
+    ["Claim", "Settlement"],
+    ["Health", "Fitness"],
+    ["Diet", "Nutrition"],
+    ["Exercise", "Workout"],
+    ["Yoga", "Meditation"],
+    ["Gym", "Fitness Center"],
+    ["Trainer", "Coach"],
+    ["Athlete", "Player"],
+    ["Team", "Squad"],
+    ["Game", "Match"],
+    ["Tournament", "Championship"],
+    ["Victory", "Win"],
+    ["Defeat", "Loss"],
+    ["Score", "Goal"],
+    ["Referee", "Umpire"],
+    ["Spectator", "Audience"],
+    ["Stadium", "Arena"],
+    ["Field", "Court"],
+    ["Ball", "Puck"],
+    ["Bat", "Racket"],
+    ["Helmet", "Cap"],
+    ["Gloves", "Mittens"],
+    ["Shoes", "Cleats"],
+    ["Uniform", "Jersey"],
+    ["Coach", "Manager"],
+    ["Strategy", "Tactic"],
+    ["Practice", "Training"],
+    ["Skill", "Talent"],
+    ["Experience", "Knowledge"],
+    ["Learning", "Education"],
+    ["Teaching", "Instruction"],
+    ["Mentor", "Guide"],
+    ["Advice", "Suggestion"],
+    ["Feedback", "Review"],
+    ["Improvement", "Progress"],
+    ["Goal", "Objective"],
+    ["Plan", "Strategy"],
+    ["Action", "Execution"],
+    ["Result", "Outcome"],
+    ["Success", "Achievement"],
+    ["Failure", "Mistake"],
+    ["Challenge", "Obstacle"],
+    ["Solution", "Answer"],
+    ["Problem", "Issue"],
+    ["Question", "Query"],
+    ["Answer", "Response"],
+    ["Discussion", "Debate"],
+    ["Argument", "Dispute"],
+    ["Agreement", "Consensus"],
+    ["Compromise", "Settlement"],
+    ["Conflict", "Fight"],
+    ["Peace", "Harmony"],
+    ["War", "Battle"],
+    ["Victory", "Triumph"],
+    ["Defeat", "Surrender"],
+    ["Hero", "Champion"],
+    ["Villain", "Antagonist"],
+    ["Friend", "Ally"],
+    ["Enemy", "Foe"],
+    ["Love", "Affection"],
+    ["Hate", "Dislike"],
+    ["Joy", "Happiness"],
+    ["Sadness", "Sorrow"],
+    ["Anger", "Rage"],
+    ["Fear", "Anxiety"],
+    ["Surprise", "Shock"],
+    ["Trust", "Confidence"],
+    ["Doubt", "Suspicion"],
 ];
 
 const Game = () => {
@@ -27,6 +218,7 @@ const Game = () => {
   const [finalGuess, setFinalGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
   const [winner, setWinner] = useState("");
+  const [paused, setPaused] = useState(false); // Pause state
 
   // Refs for autoFocus
   const nameInputRef = useRef(null);
@@ -287,8 +479,88 @@ const Game = () => {
     setPlayers([...initialPlayers]); // Restore initial players (including eliminated players)
   };
 
+  // Calculate number of Undercover and Mr. White roles
+  const calculateRoles = () => {
+    const playerCount = players.length;
+    let undercoverCount = 0;
+    let mrWhiteCount = 0;
+
+    if (playerCount >= 3 && playerCount <= 4) {
+      undercoverCount = 1;
+      mrWhiteCount = 0;
+    } else if (playerCount >= 5 && playerCount <= 6) {
+      undercoverCount = 1;
+      mrWhiteCount = 1;
+    } else if (playerCount >= 7 && playerCount <= 8) {
+      undercoverCount = 2;
+      mrWhiteCount = 1;
+    } else if (playerCount >= 9 && playerCount <= 10) {
+      undercoverCount = 3;
+      mrWhiteCount = 1;
+    } else if (playerCount >= 11 && playerCount <= 12) {
+      undercoverCount = 3;
+      mrWhiteCount = 2;
+    } else if (playerCount >= 13 && playerCount <= 14) {
+      undercoverCount = 4;
+      mrWhiteCount = 2;
+    } else if (playerCount >= 15 && playerCount <= 16) {
+      undercoverCount = 5;
+      mrWhiteCount = 2;
+    } else if (playerCount >= 17 && playerCount <= 18) {
+      undercoverCount = 5;
+      mrWhiteCount = 3;
+    } else if (playerCount >= 19 && playerCount <= 20) {
+      undercoverCount = 6;
+      mrWhiteCount = 3;
+    }
+
+    return { undercoverCount, mrWhiteCount };
+  };
+
+  const { undercoverCount, mrWhiteCount } = calculateRoles();
+
   return (
-    <div className="p-6 text-center">
+    <div className="p-6 text-center relative">
+      {/* Pause Button */}
+      {/* {started && !gameOver && (
+        <div className="absolute top-2 right-2">
+          <button
+            onClick={() => setPaused(!paused)}
+            className="p-2 bg-yellow-500 text-white rounded"
+          >
+            ⏸️ Pause
+          </button>
+          {paused && (
+            <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg p-2">
+              <button
+                onClick={() => setPaused(false)}
+                className="block w-full p-2 bg-blue-500 text-white rounded mb-2"
+              >
+                Resume
+              </button>
+              <button
+                onClick={playAgain}
+                className="block w-full p-2 bg-green-500 text-white rounded mb-2"
+              >
+                Restart
+              </button>
+              <button
+                onClick={resetToTodoList}
+                className="block w-full p-2 bg-blue-500 text-white rounded mb-2"
+              >
+                Add Player
+              </button>
+              <button
+                onClick={quitGame}
+                className="block w-full p-2 bg-red-500 text-white rounded"
+              >
+                Quit
+              </button>
+            </div>
+          )}
+        </div>
+      )} */}
+
       {!started ? (
         <div>
           <h1 className="text-2xl font-bold">Code Undercover</h1>
@@ -305,6 +577,9 @@ const Game = () => {
               Add Player
             </button>
           </form>
+          <p className="mt-2 font-bold">
+            Undercover: {undercoverCount} &nbsp;&nbsp;&nbsp; Mr. White: {mrWhiteCount}
+          </p>
           <ul className="mt-4">
             {players.map((p, i) => (
               <li key={i} className="flex items-center justify-between p-2">
@@ -390,7 +665,7 @@ const Game = () => {
             </div>
           )}
           <p className="mt-2">Describe your secret word in the order below, using just a word:</p>
-          <ul className="mt-2 p-4 bg-gray-200 rounded">
+          <ul className="mt-2 p-4 bg-gray-200 rounded mx-auto w-full md:w-1/2">
             {queue.map((player, index) => (
               <li key={index} className="p-1">
                 {index + 1}. {player}
