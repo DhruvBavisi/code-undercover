@@ -1,67 +1,70 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.container {
-    background-color: #ffffff;
+  }
+  
+  .container {
+    background-color: #1e1e1e; /* Dark container background */
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow */
     padding: 2rem;
     max-width: 800px;
     width: 100%;
     margin: 1rem;
-}
-
-h1,
-h2 {
-    color: #2c3e50;
+  }
+  
+  /* Headings */
+  h1, h2 {
+    color: #ffffff; /* White for headings */
     margin-bottom: 1rem;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 2.5rem;
     font-weight: 700;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 1.75rem;
     font-weight: 600;
-}
-
-p {
+  }
+  
+  /* Paragraphs */
+  p {
     font-size: 1rem;
-    color: #555;
+    color: #b0b0b0; /* Light gray for text */
     margin-bottom: 1rem;
-}
-
-/* Input Fields */
-input {
+  }
+  
+  /* Input Fields */
+  input {
     width: 100%;
     padding: 0.75rem;
-    border: 2px solid #ddd;
+    border: 2px solid #333; /* Darker border */
     border-radius: 8px;
     font-size: 1rem;
     margin-bottom: 1rem;
+    background-color: #2c2c2c; /* Dark input background */
+    color: #e0e0e0; /* Light text */
     transition: border-color 0.3s ease;
-}
-
-input:focus {
-    border-color: #3498db;
+  }
+  
+  input:focus {
+    border-color: #3498db; /* Blue focus border */
     outline: none;
-}
-
-/* Buttons */
-button {
-    background-color: #3498db;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #3498db; /* Blue button */
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -70,219 +73,215 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0.5rem;
-}
-
-/* Increase specificity for the remove player button */
-li button.remove-player-button {
+  }
+  
+  button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  button:active {
+    background-color: #1c5980; /* Even darker blue on active */
+  }
+  
+  button.remove {
+    background-color: #e74c3c; /* Red for remove button */
+  }
+  
+  button.remove:hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+  
+  button.remove:active {
+    background-color: #96281b; /* Even darker red on active */
+  }
+  
+  button.play-again {
+    background-color: #2ecc71; /* Green for play again button */
+  }
+  
+  button.play-again:hover {
+    background-color: #27ae60; /* Darker green on hover */
+  }
+  
+  button.play-again:active {
+    background-color: #1e8449; /* Even darker green on active */
+  }
+  
+  button.quit {
+    background-color: #e67e22; /* Orange for quit button */
+  }
+  
+  button.quit:hover {
+    background-color: #d35400; /* Darker orange on hover */
+  }
+  
+  button.quit:active {
+    background-color: #a84300; /* Even darker orange on active */
+  }
+  
+  /* Remove Player Button */
+  .remove-player-button {
     background-color: transparent !important;
-    color: gray !important;
+    color: #b0b0b0 !important; /* Light gray text */
     border: none !important;
     padding: 0.25rem 0.5rem !important;
     cursor: pointer !important;
-}
-
-li button.remove-player-button:hover {
-    color: black !important;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-button:active {
-    background-color: #1c5980;
-}
-
-button.remove {
-    background-color: #e74c3c;
-}
-
-button.remove:hover {
-    background-color: #c0392b;
-}
-
-button.remove:active {
-    background-color: #96281b;
-}
-
-button.play-again {
-    background-color: #2ecc71;
-}
-
-button.play-again:hover {
-    background-color: #27ae60;
-}
-
-button.play-again:active {
-    background-color: #1e8449;
-}
-
-button.quit {
-    background-color: #e67e22;
-}
-
-button.quit:hover {
-    background-color: #d35400;
-}
-
-button.quit:active {
-    background-color: #a84300;
-}
-
-/* Player List */
-ul {
+    width: 32px; /* Default width for small screens */
+  }
+  
+  .remove-player-button:hover {
+    color: #ffffff !important; /* White text on hover */
+  }
+  
+  /* Responsive width adjustments */
+  @media (min-width: 640px) {
+    .remove-player-button {
+      width: 40px; /* Width for small screens (sm) */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .remove-player-button {
+      width: 48px; /* Width for medium screens (md) */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .remove-player-button {
+      width: 56px; /* Width for large screens (lg) */
+    }
+  }
+  
+  /* Player List */
+  ul {
     list-style-type: none;
     padding: 0;
-}
-
-li {
+  }
+  
+  li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333; /* Darker border */
     font-size: 1rem;
-}
-
-li:last-child {
+  }
+  
+  li:last-child {
     border-bottom: none;
-}
-
-/* Reveal Section */
-.reveal-section {
-    background-color: #ecf0f1;
+  }
+  
+  /* Reveal Section */
+  .reveal-section {
+    background-color: #2c2c2c; /* Dark background */
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-}
-
-.reveal-section h2 {
+  }
+  
+  .reveal-section h2 {
     margin-bottom: 1rem;
-}
-
-.reveal-section p {
+  }
+  
+  .reveal-section p {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
-}
-
-/* Elimination Phase */
-.elimination-phase {
-    background-color: #f9f9f9;
+    color: #e0e0e0; /* Light text */
+  }
+  
+  /* Elimination Phase */
+  .elimination-phase {
+    background-color: #2c2c2c; /* Dark background */
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-}
-
-.elimination-phase h2 {
+  }
+  
+  .elimination-phase h2 {
     margin-bottom: 1rem;
-}
-
-.elimination-phase ul {
-    background-color: #ffffff;
+  }
+  
+  .elimination-phase ul {
+    background-color: #1e1e1e; /* Darker background */
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Game Over Section */
-.game-over {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  }
+  
+  /* Game Over Section */
+  .game-over {
     text-align: center;
     padding: 2rem;
-    background-color: #ecf0f1;
+    background-color: #2c2c2c; /* Dark background */
     border-radius: 8px;
     margin-bottom: 1rem;
-}
-
-.game-over h2 {
+  }
+  
+  .game-over h2 {
     margin-bottom: 1.5rem;
-}
-
-/* Responsive Design */
-@media (min-width: 640px) {
-    .remove-player-button {
-        width: 40px;
-        /* Width for small screens (sm) */
-    }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+      padding: 1rem;
     }
-
+  
     h1 {
-        font-size: 2rem;
+      font-size: 2rem;
     }
-
+  
     h2 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
+  
     button {
-        width: 100%;
-        margin: 0.5rem 0;
+      width: 100%;
+      margin: 0.5rem 0;
     }
-
-    .reveal-section,
-    .elimination-phase,
-    .game-over {
-        padding: 1rem;
+  
+    .reveal-section, .elimination-phase, .game-over {
+      padding: 1rem;
     }
-
-    .reveal-section p,
-    .elimination-phase p {
-        font-size: 1rem;
+  
+    .reveal-section p, .elimination-phase p {
+      font-size: 1rem;
     }
-
+  
     .elimination-phase ul {
-        padding: 0.5rem;
+      padding: 0.5rem;
     }
-
-    .remove-player-button {
-        width: 48px;
-        /* Width for medium screens (md) */
-    }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     h1 {
-        font-size: 1.75rem;
+      font-size: 1.75rem;
     }
-
+  
     h2 {
-        font-size: 1.25rem;
+      font-size: 1.25rem;
     }
-
+  
     input {
-        font-size: 0.9rem;
-        padding: 0.5rem;
+      font-size: 0.9rem;
+      padding: 0.5rem;
     }
-
+  
     button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
     }
-
-    .reveal-section,
-    .elimination-phase,
-    .game-over {
-        padding: 0.75rem;
+  
+    .reveal-section, .elimination-phase, .game-over {
+      padding: 0.75rem;
     }
-
-    .reveal-section p,
-    .elimination-phase p {
-        font-size: 0.9rem;
+  
+    .reveal-section p, .elimination-phase p {
+      font-size: 0.9rem;
     }
-
+  
     .elimination-phase ul {
-        padding: 0.25rem;
+      padding: 0.25rem;
     }
-}
-
-@media (min-width: 1024px) {
-    .remove-player-button {
-        width: 56px;
-        /* Width for large screens (lg) */
-    }
-}
+  }
