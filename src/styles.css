@@ -199,6 +199,13 @@ li:last-child {
 }
 
 /* Responsive Design */
+@media (min-width: 640px) {
+    .remove-player-button {
+        width: 40px;
+        /* Width for small screens (sm) */
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -230,6 +237,11 @@ li:last-child {
 
     .elimination-phase ul {
         padding: 0.5rem;
+    }
+
+    .remove-player-button {
+        width: 48px;
+        /* Width for medium screens (md) */
     }
 }
 
@@ -265,5 +277,12 @@ li:last-child {
 
     .elimination-phase ul {
         padding: 0.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .remove-player-button {
+        width: 56px;
+        /* Width for large screens (lg) */
     }
 }

@@ -267,7 +267,7 @@ const Game = () => {
                   onClick={() => removePlayer(p)}
                   className="remove-player-button" // Add the custom class
                 >
-                  -
+                  –
                 </button>
               </li>
             ))}
