@@ -48,10 +48,13 @@ const Game = () => {
 
   const addPlayer = (e) => {
     if (e) e.preventDefault(); // Prevent form submission
-    if (name.trim() && !players.includes(name)) {
-      const capitalizedName = capitalizeFirstLetter(name.trim());
+    const trimmedName = name.trim();
+    if (trimmedName && !players.some((p) => p.toLowerCase() === trimmedName.toLowerCase())) {
+      const capitalizedName = capitalizeFirstLetter(trimmedName);
       setPlayers([...players, capitalizedName]);
       setName("");
+    } else {
+      alert("Name already exists or is invalid!");
     }
   };
 
@@ -64,16 +67,59 @@ const Game = () => {
     const civilianWord = pair[0];
     const undercoverWord = pair[1];
 
+    // Determine number of Undercover and Mr. White based on player count
+    let undercoverCount = 0;
+    let mrWhiteCount = 0;
+
+    if (playerList.length >= 3 && playerList.length <= 4) {
+      undercoverCount = 1;
+      mrWhiteCount = 0;
+    } else if (playerList.length >= 5 && playerList.length <= 6) {
+      undercoverCount = 1;
+      mrWhiteCount = 1;
+    } else if (playerList.length >= 7 && playerList.length <= 8) {
+      undercoverCount = 2;
+      mrWhiteCount = 1;
+    } else if (playerList.length >= 9 && playerList.length <= 10) {
+      undercoverCount = 3;
+      mrWhiteCount = 1;
+    } else if (playerList.length >= 11 && playerList.length <= 12) {
+      undercoverCount = 3;
+      mrWhiteCount = 2;
+    } else if (playerList.length >= 13 && playerList.length <= 14) {
+      undercoverCount = 4;
+      mrWhiteCount = 2;
+    } else if (playerList.length >= 15 && playerList.length <= 16) {
+      undercoverCount = 5;
+      mrWhiteCount = 2;
+    } else if (playerList.length >= 17 && playerList.length <= 18) {
+      undercoverCount = 5;
+      mrWhiteCount = 3;
+    } else if (playerList.length >= 19 && playerList.length <= 20) {
+      undercoverCount = 6;
+      mrWhiteCount = 3;
+    }
+
     // Assign roles
     let roles = Array(playerList.length).fill("Civilian");
-    const mrWhiteIndex = Math.floor(Math.random() * playerList.length);
-    roles[mrWhiteIndex] = "Mr. White";
 
-    let undercoverIndex;
-    do {
-      undercoverIndex = Math.floor(Math.random() * playerList.length);
-    } while (undercoverIndex === mrWhiteIndex);
-    roles[undercoverIndex] = "Undercover";
+    // Assign Undercover roles
+    for (let i = 0; i < undercoverCount; i++) {
+      let index;
+      do {
+        index = Math.floor(Math.random() * playerList.length);
+      } while (roles[index] !== "Civilian");
+      roles[index] = "Undercover";
+    }
+
+    // Assign Mr. White roles
+    for (let i = 0; i < mrWhiteCount; i++) {
+      let index;
+      do {
+        index = Math.floor(Math.random() * playerList.length);
+      } while (roles[index] !== "Civilian");
+      roles[index] = "Mr. White";
+    }
 
     // Create assignments
     const newAssignments = {};
